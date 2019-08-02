@@ -89,8 +89,14 @@ It's optional, and defaulted as:
     }]
   },
   widthRatio: .14,
-  exportStyle: true,
-  plugins: []
+  plugins: [
+    Table2Excel.plugins.fontPlugin,
+    Table2Excel.plugins.fillPlugin,
+    Table2Excel.plugins.formPlugin,
+    Table2Excel.plugins.alignmentPlugin,
+    Table2Excel.plugins.hyperlinkPlugin,
+    Table2Excel.plugins.autoWidthPlugin
+  ]
 }
 ```
 
@@ -105,11 +111,12 @@ Plugin helps to extend the ability of transforming table to excel.
 Build-in plugins can be access like:
 
 ```js
-Table2Excel.plugins.fontPlugin
-Table2Excel.plugins.alignmentPlugin
+Table2Excel.plugins.fontPlugin,
+Table2Excel.plugins.fillPlugin,
+Table2Excel.plugins.formPlugin,
+Table2Excel.plugins.alignmentPlugin,
+Table2Excel.plugins.hyperlinkPlugin,
 Table2Excel.plugins.autoWidthPlugin
-Table2Excel.plugins.formPlugin
-Table2Excel.plugins.hyperlinkPlugin
 ```
 
 A plugin can be defined to join different phase of table to excel process, and in different phase, plugin is able to access different objects from context.
